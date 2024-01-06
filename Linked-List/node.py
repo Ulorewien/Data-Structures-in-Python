@@ -11,18 +11,22 @@ class Node(object):
         __repr__(): Returns a string representation of the node.
     """
 
-    def __init__(self, data = 0):
+    def __init__(self, data = 0, double = False):
         """
         Initializes a node with the given data.
 
         Args:
             data: The data to be stored in the node.
+            double (bool): If True, creates a doubly linked list node with a 'prev' reference.
 
         Example:
         >>> node = Node(42)
+        >>> doubly_linked_node = Node(42, double=True)
         """
         self.data = data
         self.next = None
+        if double:
+            self.prev = None
 
     def __repr__(self):
         """
